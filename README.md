@@ -1,6 +1,4 @@
 # Simple Linear Regression Project 
-Machine learning Model 
-
 
 **Sales Prediction
 
