@@ -1,6 +1,5 @@
-# ML-Project
-Project on Simple Linear Regression 
-
+# Simple Linear Regression Project 
+Machine learning Model 
 
 
 **Sales Prediction
