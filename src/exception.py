@@ -1,4 +1,5 @@
 import sys
+from src.logger import logging
 
 
 def error_message_detail(error, error_detail):
@@ -8,11 +9,12 @@ def error_message_detail(error, error_detail):
     line_number = exc_tb.tb_lineno
 
     error_message = (
-        "Error occurred in python script name [{0}] "
-        "line number [{1}] "
-        "error message [{2}]"
-    ).format(file_name, line_number, str(error))
+        f"Error occurred in python script name [{file_name}] "
+        f"line number [{line_number}] "
+        f"error message [{str(error)}]"
+    )
 
+    logging.error(error_message)
     return error_message
 
 
@@ -25,3 +27,9 @@ class CustomException(Exception):
         return self.error_message
 
 
+# 🔴 THIS IS WHAT TRIGGERS THE ERROR
+if __name__ == "__main__":
+    try:
+        a = 1 / 0
+    except Exception as e:
+        raise CustomException(e, sys)
