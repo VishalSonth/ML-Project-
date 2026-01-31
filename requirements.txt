@@ -6,7 +6,8 @@ scikit-learn
 catboost
 xgboost
 dill
--e .
+Flask
+#-e .
 
 
 
